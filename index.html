@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le Monde Est À Vous - Avignon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #2d3748;
+      margin: 0;
+      background-color: #f9fafb;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      height: 70px;
+      display: flex;
+      align-items: center;
+      z-index: 50;
+      padding: 0;
+      width: 100%;
+    }
+
+    header > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #4c51bf;
+      white-space: nowrap;
+      margin: 0;
+      padding-left: 0;
+      flex-shrink: 0;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-weight: 600;
+      font-size: 0.8rem;
+      gap: 0.2rem;
+      min-width: 140px;
+    }
+
+    nav a {
+      color: #4c51bf;
+      text-decoration: none;
+      padding: 0.15rem 0.3rem;
+      border-radius: 6px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #5a67d8;
+      color: white;
+      outline: none;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        height: 80px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+      nav {
+        flex-direction: row;
+        font-size: 0.85rem;
+        gap: 0.7rem;
+        align-items: center;
+        min-width: unset;
+      }
+      nav a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3rem 1rem 6rem;
+    }
+
+    section.text-center {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 4rem;
+    }
+
+    #services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 6rem;
+    }
+
+    @media (min-width: 1024px) {
+      #services {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    #services > div {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.8rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    #services > div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    #services img.service-img {
+      max-height: 80px;
+      margin-bottom: 1rem;
+      object-fit: contain;
+      width: auto;
+    }
+
+    #horaires, #contact {
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+
+    #horaires h3, #contact h3 {
+      color: #4c51bf;
+      margin-bottom: 1rem;
+    }
+
+    .map-container {
+      max-width: 1120px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+    }
+
+    footer {
+      background-color: #4c51bf;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-weight: 600;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #5a67d8;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Le Monde Est À Vous</h1>
+      <nav>
+        <a href="#services" class="hover:text-indigo-600 transition">Services</a>
+        <a href="#horaires" class="hover:text-indigo-600 transition">Horaires</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="text-center">
+      <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: #2d3748;">
+        Bienvenue à Vous
+      </h2>
+      <p style="font-size: 1.3rem; color: #4a5568;">
+        Tous vos services en un seul endroit : transferts d'argent, billets,
+        impression, et bien plus !
+      </p>
+    </section>
+
+    <section id="services">
+      <div>
+        <img
+          src="https://5.imimg.com/data5/MD/ME/UD/ANDROID-3703154/product-jpeg-500x500.jpeg"
+          alt="Western Union"
+          class="service-img"
+          loading="lazy"
+        />
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Transferts d'argent</h4>
+        <p>
+          Western Union, RIA, MoneyGram - envoyez de l'argent partout dans le monde en toute sécurité.
+        </p>
+      </div>
+
+      <div>
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/ryanair-2.svg"
+          alt="Ryanair"
+          class="service-img"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.iris-etourism.io/uploads/combloux_tourisme/ca8/10-134-10454538.webp"
+          alt="FlixBus"
+          class="service-img"
+          loading="lazy"
+          style="max-height: 80px;"
+        />
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Billetterie</h4>
+        <p>
+          Réservation de billets Ryanair, Flixbus directement sur place.
+        </p>
+      </div>
+
+      <div>
+        <img
+          src="https://www.robertlegare.com/medias/impression-icon.png"
+          alt="Bureautique"
+          class="service-img"
+          loading="lazy"
+        />
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Bureautique</h4>
+        <p>
+          Impression, scan, photocopie et création de CV manuscrit à partir de vos brouillons.
+        </p>
+      </div>
+
+      <div>
+        <img
+          src="https://inwi.ma/_next/image?url=http%3A%2F%2Fmscontent-galaxie%3A8080%2Fapi%2Fv1%2Fms-content%2Fmedia%2Fblocks%2Fimages%2FTransfert_credit.png&w=640&q=75"
+          alt="Transfert de crédits"
+          class="service-img"
+          loading="lazy"
+        />
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Transfert de crédits</h4>
+        <p>Rechargez vos téléphones nationaux et internationaux facilement.</p>
+      </div>
+
+      <div>
+        <img
+          src="https://alloforfait.fr/wp-content/uploads/2025/04/forfaits-mobile-sans-engagement.jpg"
+          alt="Cartes SIM"
+          class="service-img"
+          loading="lazy"
+        />
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Cartes SIM & Recharges</h4>
+        <p>
+          Cartes SIM Lyca, Syma, Lebara et recharges mobiles toutes marques disponibles en magasin.
+        </p>
+      </div>
+
+      <div>
+        <img
+          src="https://s.alicdn.com/@sc04/kf/H357206ea98914e4aa167fbdc23a4531aH.jpeg_720x720q50.jpg"
+          alt="Téléphones et chargeurs"
+          class="service-img"
+          loading="lazy"
+        />
+        <img
+          src="https://www.01net.com/app/uploads/2021/01/S21-Box.jpg"
+          alt="Téléphones"
+          class="service-img"
+          loading="lazy"
+          style="max-height: 80px;"
+        />
+        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Téléphones & Chargeurs</h4>
+        <p>
+          Vente de smartphones, téléphones simples, câbles, chargeurs et accessoires.
+        </p>
+      </div>
+    </section>
+
+    <section id="horaires" style="margin-bottom: 4rem; text-align: center; max-width: 350px; margin-left: auto; margin-right: auto; font-size: 1.2rem;">
+      <h3 style="color: #4c51bf; font-weight: 700; margin-bottom: 1rem; font-size: 2rem;">
+        Horaires d'ouverture
+      </h3>
+      <p style="margin-bottom: 0.5rem;">
+        Lundi - Samedi : <strong>9h00 - 19h30</strong>
+      </p>
+      <p>Dimanche : <strong>Fermé</strong></p>
+    </section>
+
+    <section id="contact" style="text-align: center; max-width: 350px; margin-left: auto; margin-right: auto; font-size: 1.2rem;">
+      <h3 style="color: #4c51bf; font-weight: 700; margin-bottom: 1rem; font-size: 2rem;">
+        Nous contacter
+      </h3>
+      <p style="margin-bottom: 0.5rem;">📍 8 avenue Saint-Ruf, 84000 Avignon</p>
+      <p style="margin-bottom: 0.5rem;">
+        📞 Téléphone : <a href="tel:+33432746410" style="color: #5a67d8; text-decoration: none;">04 32 74 64 10</a>
+      </p>
+      <p>
+        📧 Email : <a href="mailto:contact@lemondestavous.fr" style="color: #5a67d8; text-decoration: none;">lemondeestavous@live.fr</a>
+      </p>
+    </section>
+  </main>
+
+  <div class="map-container" aria-label="Carte Google Maps de 8 avenue Saint-Ruf, Avignon">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4081090639746!2d4.811056915495092!3d43.94602697911226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5eb7b4a0b5533%3A0x6c580e37dce93d16!2s8%20Av.%20Saint-Ruf%2C%2084000%20Avignon!5e0!3m2!1sfr!2sfr!4v1622790420408!5m2!1sfr!2sfr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Carte Google Maps de 8 avenue Saint-Ruf, Avignon"
+    ></iframe>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Le Monde Est À Vous - Tous droits réservés.</p>
+  </footer>
+
+  <button
+    id="backToTop"
+    aria-label="Retour en haut"
+    title="Retour en haut"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+  >
+    ↑
+  </button>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+
+    document.querySelector('a[href="#horaires"]').addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById('horaires');
+      const headerOffset = 70; // hauteur header sticky
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset - 10; // décalage de 10px en plus pour respirer
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
+
+    // Idem pour les autres liens de nav pour un scroll parfait (optionnel)
+    document.querySelector('a[href="#services"]').addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById('services');
+      const headerOffset = 70;
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset - 10;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
+
+    document.querySelector('a[href="#contact"]').addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById('contact');
+      const headerOffset = 70;
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset - 10;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
